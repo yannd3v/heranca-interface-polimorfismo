@@ -1,10 +1,21 @@
 
-public class Cliente extends Autenticavel {
+public class Cliente implements Autenticavel {
 
-	@Override
-	public double getBonificacao() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	private AutenticacaoUtil autenticador;
+	
+	public Cliente() {
+		this.autenticador = new AutenticacaoUtil();
 	}
+	
+	public void setSenha(int senha) {
+		this.autenticador.setSenha(senha);
+	}
+
+	public boolean autentica(int senha) {
+		return autenticador.autentica(senha);
+	}
+
+	
 
 }
